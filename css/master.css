@@ -1,0 +1,896 @@
+/* Start Variables */
+:root {
+    /* Primary colors */
+    --blue: #87CEFA;
+    --Blue-alt: #B0C4DE;
+    --Green: #98FB98;
+    --Green-alt: #2E8B57;
+    /* Primary colors */
+    
+    /* Secondary colors */
+    --Yellow: #eeee63;
+    --Orange: #FFA500;
+    /* Secondary colors */
+
+    /* Other Color */
+    --Night-Blue: #2d545e;
+    /* Other Color */
+    
+    /* Start Section Colors */
+    --background-color-1: var(--Night-Blue);
+    --background-color-2: #ccc;
+    /* End Section Colors */
+
+    /* Start Transitions */
+    --fast-transition: .3s;
+    --medium-transition: .5s;
+    --slow-transition: .8s;
+    /* End Transitions */
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* landscape phones */
+/* tablets */
+    @media (min-width: 767px) {
+        .container {
+            width: 750px;
+        }
+    }
+/* desktops */
+    @media (min-width: 992px) {
+        .container {
+            width: 970px;
+        }
+    }
+/* large desktops */
+    @media (min-width: 1200px) {
+        .container {
+            width: 1170px;
+        }
+    }
+/* End Global Rules */
+/* Start Css Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    font-family: 'Poppins';
+}
+ol, ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* End Css Reset */
+/* Start Local Fonts */
+/* lobster-two-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lobster Two';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/lobster-two-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* lobster-two-italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lobster Two';
+    font-style: italic;
+    font-weight: 400;
+    src: url('../fonts/lobster-two-v20-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* lobster-two-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lobster Two';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/lobster-two-v20-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* lobster-two-700italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lobster Two';
+    font-style: italic;
+    font-weight: 700;
+    src: url('../fonts/lobster-two-v20-latin-700italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-100 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 100;
+    src: url('../fonts/poppins-v22-latin-100.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-100italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 100;
+    src: url('../fonts/poppins-v22-latin-100italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-200 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 200;
+    src: url('../fonts/poppins-v22-latin-200.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-200italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 200;
+    src: url('../fonts/poppins-v22-latin-200italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-300 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/poppins-v22-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-300italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 300;
+    src: url('../fonts/poppins-v22-latin-300italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/poppins-v22-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 400;
+    src: url('../fonts/poppins-v22-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-500 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/poppins-v22-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-500italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 500;
+    src: url('../fonts/poppins-v22-latin-500italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-600 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/poppins-v22-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-600italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 600;
+    src: url('../fonts/poppins-v22-latin-600italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/poppins-v22-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-700italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 700;
+    src: url('../fonts/poppins-v22-latin-700italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-800 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/poppins-v22-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-800italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 800;
+    src: url('../fonts/poppins-v22-latin-800italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-900 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/poppins-v22-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-900italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 900;
+    src: url('../fonts/poppins-v22-latin-900italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+/* End Local Fonts */
+/* Start Special Elements */
+/* Start Animated Text */
+.animated-text {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 75px;
+    font-size: 40px;
+  }	  
+  .ani-sec {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(60px);
+    animation: moving-text 10s alternate infinite;
+}
+@keyframes moving-text {
+    0%, 100% {
+        transform: translateY(60px);
+    }
+    20% {
+        transform: translateY(60px);
+    }
+    40% {
+        transform: translateY(7px);
+    }
+    60% {
+        transform: translateY(7px);
+    }
+    80% {
+        transform: translateY(-48px);
+    }
+    100% {
+        transform: translateY(-48px);
+    }
+}
+@media (max-width: 767px) {
+    .animated-text {
+        height: 45px;
+        margin-top: 50px;
+    }
+    .ani-sec {
+        transform: translateY(45px);
+    }
+    @keyframes moving-text {
+        0% {
+            transform: translateY(45px);
+        }
+        20% {
+            transform: translateY(45px);
+        }
+        40% {
+            transform: translateY(8px);
+        }
+        60% {
+            transform: translateY(8px);
+        }
+        80% {
+            transform: translateY(-31px);
+        }
+        100% {
+            transform: translateY(-31px);
+        }
+    }
+}
+/* Start Animated Text */
+/* Start Special Titles */
+.special-title {
+    color: var(--Orange);
+    text-transform: capitalize;
+    margin: 0 auto;
+    margin-bottom: 65px;
+}
+.special-title .title {
+    font-weight: bold;
+    font-size: 35px;
+}
+.special-title .title::before,
+.special-title .title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--Orange);
+    width: 60px;
+    height: 4px;
+    border-radius: 10px 0 0 10px;
+}
+.special-title .title::before {
+    left: -75px;
+}
+.special-title .title::after {
+    right: -75px;
+}
+/* End Special Titles */
+/* Start Button Up */
+.btn-up {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    font-size: 75px;
+    color: black;
+    z-index: 999;
+    opacity: 0.5;
+    transition: var(--fast-transition);
+}
+.btn-up:hover {
+    opacity: 1;
+}
+/* End Button Up */
+/* Start Special Btn */
+.special-btn {
+    transition: var(--fast-transition);
+}
+.special-btn:hover {
+    background-color: white;
+    color: var(--Orange);
+    border: 3px solid var(--Orange);
+}
+/* End Special Btn */
+/* End Special Elements */
+/* Start Header */
+header {
+    height: 87px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+header .links li {
+    height: 87px;
+    min-width: 150px;
+}
+@media (max-width: 992px) {
+    header .links li {
+        min-width: 110px;
+    }
+}
+header .links li a:hover {
+    color: var(--Orange);
+}
+header img:hover {
+    background-color: var(--Orange);
+}
+/* End Header */
+/* Start Header Mobile Version */
+@media (min-width: 767px) {
+    .header-mobile-ver {
+        display: none;
+    }
+}
+.header-mobile-ver img {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15px;
+}
+.header-mobile-ver img:hover {
+    background-color: var(--Orange);
+}
+.header-mobile-ver .menu:hover .links {
+    left: 0;
+}
+.header-mobile-ver i {
+    position: absolute;
+    left: 30px;
+    top: 60px;
+    font-size: 30px;
+    z-index: 1;
+    cursor: pointer;
+}
+.header-mobile-ver i:hover {
+    color: var(--Orange);
+}
+.header-mobile-ver .links {
+    position: absolute;
+    top: 125px;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background-color: white;
+}
+.header-mobile-ver .links li {
+    height: 13%;
+}
+.header-mobile-ver .links li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+.header-mobile-ver .links li a:hover {
+    color: var(--Orange);
+}
+/* End Header Mobile Version */
+/* Start Hero Section  */
+.hero-section img.image {
+    width: 100%;
+    height: 100vh;
+}
+.hero-section::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 60%);
+}
+.hero-section .text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.hero-section h1 {
+    font-size: 75px;
+}
+@media (max-width: 767px) {
+    .hero-section h1 {
+        font-size: 40px;
+    }
+}
+/* End Hero Section  */
+/* Start About Section  */
+.about-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--background-color-1);
+    margin-top: -3px;
+}
+.timeline {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--Orange);
+    width: 8px;
+    border-radius: 20px;
+    border: 3px solid white;
+    outline: 3px solid black;
+}
+.contain {
+    position: relative;
+    padding: 10px 40px;
+    width: 50%;
+    z-index: 1;
+}
+.contain.left {
+    left: 0;
+}
+.contain.right {
+    left: 50%;
+}
+.contain .contant {
+    background-color: var(--Orange);
+    box-shadow: 0 0 5px 0 #ffffff4a;
+}
+.contain.left .contant {
+    border-radius: 75px 0;
+} 
+.contain.right .contant {
+    border-radius: 0 75px;
+}
+.contain .special-image {
+    position: absolute;
+    right: 30px;
+    top: -170px;
+    width: 200px;
+    height: 200px;
+    transform: rotate(15deg);
+    z-index: -1;
+}
+.contain .contant h2 {
+    color: white;
+    font-size: 50px;
+}
+.contain .contant p {
+    line-height: 1.5;
+}
+.contain .contant #achivement {
+    color: var(--Night-Blue);
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.contain .contant::before {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 15px;
+}
+.contain.left .contant::before {
+    border-color: transparent transparent transparent var(--Orange);
+    right: -29px;
+}
+.contain.right .contant::before {
+    border-color: transparent var(--Orange) transparent transparent;
+    left: -29px;
+}
+.contain .contant::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--Orange);
+    border: 3px solid white;
+    outline: 3px solid black;
+    top: 23px;
+}
+.contain.left .contant::after {
+    right: -56px;
+}
+.contain.right .contant::after {
+    left: -56px;
+}
+@media (max-width: 767px) {
+    .timeline::before {
+        left: 10px;
+    }
+    .contain {
+        padding: 20px 0 0 45px;
+        width: 100%;
+    }
+    .contain.right {
+        left: 0;
+    }
+    .contain.left .contant {
+        border-radius: 0 75px;
+    }
+    .contain.left .contant::before {
+        border-color: transparent var(--Orange) transparent transparent; 
+        left: -29px;
+        width: fit-content;
+    }
+    .contain.left .contant::after,
+    .contain.right .contant::after {
+        left: -51px;
+    }
+}
+/* End About Section */
+/* Start Why Us Section */
+.why-us {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--background-color-2);
+}
+.why-us .images-section .image-row {
+    padding: 10px;
+    margin: -7px -5px;
+}
+.why-us .images-section .image-row .txt-r {
+    text-align: right;
+}
+.why-us .images-section .img1 {
+    width: 100%;
+    border-radius: 0 70px;
+}
+.why-us .images-section .img2 {
+    width: 75%;
+    margin-top: 25%;
+}
+.why-us .images-section .img3 {
+    width: 75%;
+}
+.why-us .images-section .img4 {
+    width: 100%;
+    border-radius: 0 70px;
+}
+.why-us .text-section .elara,
+.why-us .text-section i {
+    font-size: 40px;
+}
+.why-us .text-section span {
+    line-height: 30px;
+}
+@media (max-width: 992px) {
+    .why-us .content {
+        flex-direction: column;
+    }
+    .why-us .images-section {
+        margin-bottom: 25px;
+    }
+    .why-us .images-section,
+    .why-us .text-section {
+        width: 100%;
+    }
+}
+/* End Why Us Section */
+/* Start Menu */
+.food-menu {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--background-color-1);
+}
+.food-menu .contant {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+@media (max-width: 768px) {
+    .food-menu .contant {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+.food-menu .contant .box img {
+    width: 80px;
+    height: 80px; 
+    border-radius: 10px;
+}
+.food-menu .contant .box .item-info {
+    flex: 1;
+}
+.food-menu .contant .box.drinks ul li:not(:last-child) {
+    margin-bottom: 3px;
+}
+/* End Menu */
+/* Start Gallery */
+.gallery {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--background-color-2);
+}
+.gallery .content {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+@media (max-width: 767px) {
+    .gallery .content {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+.gallery .images::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255 255 255 / 30%);
+    z-index: 999;
+}
+.gallery .box:hover .images::before {
+    animation: white-overlay .5s;   
+}
+@keyframes white-overlay {
+    0% {
+        width: 0%;
+        height: 0%;
+    }
+    100% {
+        width: 150%;
+        height: 150%;
+        opacity: 0;
+    }
+}
+.gallery .box img {
+    width: 100%;
+    height: 300px;
+}
+.gallery .box:hover img {
+    transform: rotate(5deg) scale(1.2);
+}
+/* End Gallery */
+/* Start Testimonials */
+.testimonials {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--background-color-1);
+}  
+.clients-comments {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+@media (max-width: 767px) {
+    .clients-comments {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+.clients-comments .box .comment {
+    min-height: 125px;
+}
+/* End Testimonials */
+/* Start Order Now */
+.order-now {
+    height: 100vh;
+}
+@media (max-width: 992px) {
+    .order-now {
+        height: fit-content;
+    }
+    .order-now .contant {
+        flex-direction: column;
+    }
+    .order-now .left,
+    .order-now .right {
+        width: 100%;
+    }
+    .order-now .left {
+        height: 300px !important;
+    }
+}
+.order-now .left {
+    background-image: url(../Images/Order-Now.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.order-now .left::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 50%);
+}
+.order-now .left h2 {
+    position: absolute;
+    font-size: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.order-now .right {
+    background-color: var(--background-color-2);
+}
+.order-now .right form input[type=text]::placeholder,
+.order-now .right textarea::placeholder {
+    color: white;
+}
+.order-now .right form select > div {
+    position: absolute;
+    top: 0;
+}
+.order-now .right input,
+.order-now .right select,
+.order-now .right textarea {
+   caret-color: black;
+}
+.order-now .right input, 
+.order-now .right select {
+    width: calc(50% - 10px);
+}
+@media (max-width: 767px) {
+    .order-now .right input, 
+    .order-now .right select {
+    width: 100%;
+}
+}
+.order-now .right form textarea {
+    height: 150px;
+    resize: none;
+}
+/* End Order Now */
+/* Start Footer */
+footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--background-color-1);
+}
+footer .box {
+    width: calc(25% - 15px);
+}
+@media (max-width: 992px) {
+    footer .box {
+        width: calc(50% - 15px);
+        margin-bottom: 25px;
+    }
+} 
+@media (max-width: 767px) {
+    footer .box {
+        width: calc(100% - 15px);
+    }
+} 
+footer .box .special-title {
+    margin-bottom: 25px;
+}
+footer .box .special-title .title {
+    font-size: 25px;
+}
+footer .box .special-title .title::before, .special-title .title::after {
+    width: 40%;
+}
+footer .box .special-title .title::before {
+    left: -55px;
+}
+footer .box .special-title .title::after {
+    right: -55px;
+}
+footer .subscribe input[type=text]::placeholder {
+    color: white;
+    caret-color: black;
+}
+footer .subscribe input[type=text],
+footer .subscribe input[type=submit] {
+    padding: 5px 10px;
+}
+/* End Footer */
